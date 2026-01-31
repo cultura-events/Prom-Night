@@ -261,13 +261,11 @@
               const note = encodeURIComponent(`PromNight-${name}`);
 
           // ✅ Universal UPI link (Android + iOS)
-          const upiUrl =
-        `upi://pay?pa=${CONFIG.MY_UPI_ID}` +
-        `&pn=Zenvybe` +
-        `&am=${amount}` +
-         `&cu=INR` +
-        `&tn=${note}`;
-
+// ✅ PhonePe-safe UPI link (personal UPI)
+const upiUrl =
+  `upi://pay?pa=${CONFIG.MY_UPI_ID}` +
+  `&am=${amount}` +
+  `&cu=INR`;
             // UPI URI Construction (Intent Link)
             // Note: This works best on Mobile devices with UPI apps installed
             
