@@ -10,141 +10,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        :root { --primary: #ec1066; --dark: #0f172a; --light: #f8fafc; --glass: rgba(255, 255, 255, 0.95); }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+        :root { --primary: #ec1066; --dark: #0f172a; --light: #f8fafc; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--light); color: var(--dark); }
 
-        /* --- HERO SECTION --- */
-        .hero-section {
-            position: relative; padding: 140px 0 100px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white; margin-bottom: 40px;
-        }
-        .hero-title { font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        .hero-badge { background: var(--primary); color: white; padding: 6px 16px; border-radius: 50px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 20px; display: inline-block; }
+        /* HERO SECTION */
+        .hero-section { position: relative; padding: 100px 0 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; text-align: center; }
+        .hero-badge { background: var(--primary); color: white; padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 700; margin-bottom: 15px; display: inline-block; }
+        .hero-poster { max-width: 280px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1); }
 
-        .btn-hero {
-            background: var(--primary); color: white; border: none; padding: 15px 45px;
-            font-weight: 700; border-radius: 50px; font-size: 18px; letter-spacing: 0.5px;
-            box-shadow: 0 10px 30px rgba(236, 16, 102, 0.4); transition: 0.3s;
-        }
-        .btn-hero:hover { background: #be0049; transform: translateY(-3px); color: white; }
+        /* MODAL DESIGN */
+        .modal-content { border-radius: 24px; border: none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        .modal-header { border-bottom: 1px solid #f1f5f9; padding: 20px 25px; }
+        .modal-body { padding: 25px !important; }
 
-        .poster-card {
-            border-radius: 20px; overflow: hidden;
-            box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1); transform: rotate(2deg); transition: 0.3s;
-        }
-        .poster-card:hover { transform: rotate(0deg) scale(1.02); }
-        .poster-img { width: 100%; display: block; }
+        .form-label-custom { font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
+        .form-control, .form-select { padding: 12px 15px; border-radius: 12px; border: 1.5px solid #e2e8f0; font-size: 15px; background: #fff; transition: 0.3s; }
+        .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(236, 16, 102, 0.1); }
 
-        /* --- INFO GRID --- */
-        .info-card { background: white; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; height: 100%; transition: 0.3s; }
-        .icon-box { width: 60px; height: 60px; background: #fff1f2; color: var(--primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; }
-
-        /* --- TICKET SECTION --- */
-        .ticket-section { background: white; border-radius: 24px; padding: 40px; border: 1px solid #e2e8f0; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05); }
-        .price-large { font-size: 42px; font-weight: 800; color: var(--dark); line-height: 1; }
-
-        /* --- MODAL STYLES --- */
-        .modal-content { border-radius: 24px; border: none; overflow: hidden; }
-        .modal-header { background: #f8fafc; border-bottom: 1px solid #eee; padding: 20px 25px; }
-        .form-control, .form-select { padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 15px; }
-        .label-small { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 5px; display: block; }
+        /* PAYMENT BOX */
+        #qr-section { display: none; background: #fff1f2; border: 2px dashed var(--primary); border-radius: 20px; padding: 20px; text-align: center; margin-top: 10px; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        .btn-pay { background: var(--dark); color: white; width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; border: none; }
-        .btn-pay:hover { background: var(--primary); }
-        .btn-upi { background: white; border: 2px dashed var(--primary); color: var(--primary); width: 100%; padding: 12px; border-radius: 12px; font-weight: 700; }
+        #upiQR { width: 200px; height: 200px; background: white; padding: 10px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        
+        .instruction-highlight { font-size: 14px; font-weight: 700; color: var(--primary); margin: 12px 0 5px; }
+        .btn-next { background: var(--primary); color: white; width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; border: none; margin-top: 10px; font-size: 16px; }
+        .btn-confirm { background: var(--dark); color: white; width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; border: none; margin-top: 20px; font-size: 16px; }
     </style>
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05);">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="font-size: 26px; color: var(--dark);"><span>zen</span><span style="color:var(--primary)">vybe</span></a>
-            <button class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-bold ms-auto" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Ticket</button>
+    <nav class="navbar bg-white border-bottom py-3">
+        <div class="container justify-content-between">
+            <a class="navbar-brand fw-bold fs-4" href="#"><span>zen</span><span style="color:var(--primary)">vybe</span></a>
+            <button class="btn btn-dark rounded-pill px-4 fw-bold" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Ticket</button>
         </div>
     </nav>
 
     <header class="hero-section">
         <div class="container">
-            <div class="row align-items-center gy-5">
-                <div class="col-lg-6 order-2 order-lg-1">
-                    <span class="hero-badge">Selling Fast &bull; Jan 24</span>
-                    <h1 class="display-3 hero-title">Proom Night <br>2026</h1>
-                    <p class="lead text-white-50 mb-5">The ultimate indoor party experience. Top DJs, premium vibes, and a night you won't forget.</p>
-                    <button class="btn-hero" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Tickets Now</button>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <div class="poster-card d-inline-block">
-                        <img src="https://zenvybe.in/Events/uploads/events/events_1768744636.png" class="poster-img" alt="Poster" style="max-width: 380px;">
-                    </div>
-                </div>
-            </div>
+            <span class="hero-badge">JAN 24 • VISAKHAPATNAM</span>
+            <h1 class="display-4 fw-bold mb-4">Proom Night 2026</h1>
+            <img src="https://zenvybe.in/Events/uploads/events/events_1768744636.png" class="hero-poster" alt="Event Poster">
+            <p class="lead text-white-50 mb-4 px-3">Join us for the ultimate indoor experience at Stone Water.</p>
+            <button class="btn btn-light btn-lg rounded-pill px-5 fw-bold shadow" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Pass</button>
         </div>
     </header>
 
     <div class="modal fade" id="bookingModal" data-bs-backdrop="static" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div>
-                        <h5 class="fw-bold mb-0">Manual UPI Checkout</h5>
-                        <p class="mb-0 small text-muted">2-step payment verification</p>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="fw-bold mb-0">Ticket Booking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm()"></button>
                 </div>
-                <div class="modal-body p-4">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label class="label-small">Full Name</label>
-                            <input type="text" id="in_name" class="form-control" placeholder="Rahul Sharma">
-                        </div>
-                        <div class="col-6">
-                            <label class="label-small">Phone</label>
-                            <input type="tel" id="in_phone" class="form-control" placeholder="+91">
-                        </div>
-                        <div class="col-6">
-                            <label class="label-small">Email</label>
-                            <input type="email" id="in_email" class="form-control" placeholder="name@email.com">
-                        </div>
-                        <div class="col-12">
-                            <label class="label-small">Ticket Type</label>
-                            <select id="in_ticket" class="form-select" onchange="updateBtnPrice()">
-                                <option value="299" data-name="Standard Entry">Standard Entry – ₹299</option>
-                                <option value="499" data-name="Gold Pass">Gold Pass – ₹499</option>
-                                <option value="799" data-name="VIP Access">VIP Access – ₹799</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="p-3 bg-light rounded-3 border">
-                                <label class="label-small text-dark">Step 1: Make Payment</label>
-                                <button class="btn-upi" onclick="handleUPIPayment()">
-                                    <i class="bi bi-qr-code-scan me-2"></i> Pay <span id="modal-price-display">₹299</span>
-                                </button>
-                                <div id="qrBox" class="d-none text-center mt-3">
-                                    <img id="upiQR" style="max-width:180px;" class="border rounded">
-                                    <br>
-                                    <a id="qrDownload" class="small fw-bold text-decoration-none" download="Payment-QR.png">Download QR</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="label-small text-dark">Step 2: Enter Details</label>
-                            <div class="row g-2">
-                                <div class="col-6">
-                                    <input id="user_upi" class="form-control" placeholder="Your UPI ID">
-                                </div>
-                                <div class="col-6">
-                                    <input id="in_utr" class="form-control" placeholder="UTR / Ref No">
-                                </div>
-                            </div>
-                        </div>
+                <div class="modal-body">
+                    
+                    <div id="step-1">
+                        <label class="form-label-custom">Personal Information</label>
+                        <input id="in_name" class="form-control mb-3" placeholder="Your Full Name">
+                        <input id="in_email" class="form-control mb-3" placeholder="Email Address">
+                        <input id="in_phone" class="form-control mb-3" placeholder="Phone Number">
+                        
+                        <label class="form-label-custom">Select Ticket</label>
+                        <select id="in_ticket" class="form-select mb-4">
+                            <option value="2" data-name="Standard">Standard Entry – ₹2</option>
+                            <option value="3" data-name="Gold">Gold Pass – ₹3</option>
+                            <option value="2" data-name="VIP">VIP Access – ₹2</option>
+                        </select>
+                        
+                        <button class="btn-next" onclick="showPayment()">Continue to Payment <i class="bi bi-arrow-right ms-1"></i></button>
                     </div>
 
-                    <button class="btn-pay mt-4" id="submitBtn" onclick="SubmitToWorker()">Verify & Book Ticket</button>
+                    <div id="qr-section">
+                        <span class="form-label-custom text-dark">Scan to Pay: ₹<span id="display-price">0</span></span>
+                        <div class="my-2">
+                            <img id="upiQR" alt="Payment QR">
+                        </div>
+                        <p class="instruction-highlight"><i class="bi bi-camera-fill me-1"></i> SCREENSHOT TO PAY</p>
+                        <p class="small text-muted mb-4" style="line-height: 1.4;">Screenshot this QR and pay in GPay, PhonePe, or Paytm.</p>
+                        
+                        <label class="form-label-custom text-start w-100">Verification Details</label>
+                        <input id="user_upi" class="form-control mb-2" placeholder="Your UPI ID (e.g. name@oksbi)">
+                        <input id="in_utr" class="form-control mb-2" placeholder="12-digit UTR / Ref Number">
+                        
+                        <button class="btn-confirm" id="submitBtn" onclick="SubmitToWorker()">Confirm & Book Ticket</button>
+                        <button class="btn btn-link btn-sm text-muted mt-2 text-decoration-none" onclick="resetForm()"><i class="bi bi-arrow-left"></i> Go Back</button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -158,72 +111,72 @@
             WORKER_URL: "https://withered-heart-20dd.krish32627.workers.dev/"
         };
 
-        function updateBtnPrice() {
-            const price = document.getElementById('in_ticket').value;
-            document.getElementById('modal-price-display').innerText = '₹' + price;
-        }
-
-        function handleUPIPayment() {
-            const name = document.getElementById('in_name').value;
+        function showPayment() {
+            const name = document.getElementById('in_name').value.trim();
+            const phone = document.getElementById('in_phone').value.trim();
             const amt = document.getElementById('in_ticket').value;
-            
-            if(!name || !document.getElementById('in_phone').value) {
-                alert("Please enter Name and Phone and email first.");
+
+            if (!name || !phone || !document.getElementById('in_email').value) {
+                alert("Please fill in all personal details first.");
                 return;
             }
 
-            const upiUrl = `upi://pay?pa=${CONFIG.MY_UPI_ID}&pn=Zenvybe&am=${amt}&cu=INR&tn=PromNight-${encodeURIComponent(name)}`;
-            const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiUrl)}`;
-            
-            const upiQR = document.getElementById('upiQR');
-            upiQR.src = qrApi;
-            document.getElementById('qrDownload').href = qrApi;
-            document.getElementById('qrBox').classList.remove('d-none');
+            // Update UI
+            document.getElementById('display-price').innerText = amt;
 
-            // Attempt to open UPI apps on mobile
-        
+            // Generate QR
+            const upiUrl = `upi://pay?pa=${CONFIG.MY_UPI_ID}&pn=Zenvybe&am=${amt}&cu=INR&tn=PromNight-${encodeURIComponent(name)}`;
+            const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(upiUrl)}`;
+            document.getElementById('upiQR').src = qrApi;
+            
+            // Switch Views
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('qr-section').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('step-1').style.display = 'block';
+            document.getElementById('qr-section').style.display = 'none';
+            // Clear inputs if modal is closed
+            document.getElementById('in_utr').value = "";
+            document.getElementById('user_upi').value = "";
         }
 
         async function SubmitToWorker() {
-            const submitBtn = document.getElementById('submitBtn');
+            const btn = document.getElementById('submitBtn');
+            const utr = document.getElementById('in_utr').value.trim();
+            const userUpi = document.getElementById('user_upi').value.trim();
+
+            if (!utr || utr.length < 10 || !userUpi) {
+                alert("Please enter both your UPI ID and the valid UTR Number.");
+                return;
+            }
+
             const data = {
                 name: document.getElementById('in_name').value.trim(),
                 phone: document.getElementById('in_phone').value.trim(),
                 email: document.getElementById('in_email').value.trim(),
-                user_upi: document.getElementById('user_upi').value.trim(),
-                utr: document.getElementById('in_utr').value.trim(),
+                user_upi: userUpi,
+                utr: utr,
                 ticket: document.getElementById('in_ticket').options[document.getElementById('in_ticket').selectedIndex].dataset.name,
                 price: document.getElementById('in_ticket').value
             };
 
-            if (!data.name || !data.utr) {
-                alert("Please fill all fields and provide UTR.");
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.innerText = "Verifying...";
+            btn.disabled = true;
+            btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Verifying...`;
 
             try {
-                const response = await fetch(CONFIG.WORKER_URL, {
+                const res = await fetch(CONFIG.WORKER_URL, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data)
                 });
-                
-                const result = await response.json();
-                if (result.status === "success" || response.ok) {
-                    alert("Submitted! Verification is pending. We will contact you shortly.");
+                if (res.ok) {
+                    alert("Ticket Submitted! We will verify your payment and contact you shortly.");
                     location.reload();
-                } else {
-                    alert("Submission failed. Please try again.");
-                }
-            } catch (e) {
-                alert("Error connecting to server.");
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerText = "Verify & Book Ticket";
-            }
+                } else { alert("Submission failed. Please try again."); }
+            } catch (e) { alert("Server connection error."); }
+            finally { btn.disabled = false; btn.innerText = "Confirm & Book Ticket"; }
         }
     </script>
 </body>
