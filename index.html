@@ -168,7 +168,7 @@
             const amt = document.getElementById('in_ticket').value;
             
             if(!name || !document.getElementById('in_phone').value) {
-                alert("Please enter Name and Phone first.");
+                alert("Please enter Name and Phone and email first.");
                 return;
             }
 
@@ -181,7 +181,7 @@
             document.getElementById('qrBox').classList.remove('d-none');
 
             // Attempt to open UPI apps on mobile
-            window.location.href = upiUrl;
+        
         }
 
         async function SubmitToWorker() {
