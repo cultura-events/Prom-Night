@@ -1,183 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proom Night 2026 | Zenvybe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>Biggest Desi Social Night | Prom Night</title>
 
-    <style>
-        :root { --primary: #ec1066; --dark: #0f172a; --light: #f8fafc; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--light); color: var(--dark); }
+<meta name="description" content="Desi DJ Night – Social Vibes. Premium Party. One Epic Night.">
+<meta name="keywords" content="Prom Night, Desi Party, DJ Night, Social Event">
 
-        /* HERO SECTION */
-        .hero-section { position: relative; padding: 100px 0 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; text-align: center; }
-        .hero-badge { background: var(--primary); color: white; padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 700; margin-bottom: 15px; display: inline-block; }
-        .hero-poster { max-width: 280px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1); }
+<meta property="og:title" content="Biggest Desi Social Night">
+<meta property="og:description" content="High-energy desi DJ party & social vibes">
+<meta property="og:image" content="https://zenvybe.in/Events/uploads/events/events_1768744636.png">
 
-        /* MODAL DESIGN */
-        .modal-content { border-radius: 24px; border: none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-        .modal-header { border-bottom: 1px solid #f1f5f9; padding: 20px 25px; }
-        .modal-body { padding: 25px !important; }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        .form-label-custom { font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
-        .form-control, .form-select { padding: 12px 15px; border-radius: 12px; border: 1.5px solid #e2e8f0; font-size: 15px; background: #fff; transition: 0.3s; }
-        .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(236, 16, 102, 0.1); }
-
-        /* PAYMENT BOX */
-        #qr-section { display: none; background: #fff1f2; border: 2px dashed var(--primary); border-radius: 20px; padding: 20px; text-align: center; margin-top: 10px; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        #upiQR { width: 200px; height: 200px; background: white; padding: 10px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        
-        .instruction-highlight { font-size: 14px; font-weight: 700; color: var(--primary); margin: 12px 0 5px; }
-        .btn-next { background: var(--primary); color: white; width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; border: none; margin-top: 10px; font-size: 16px; }
-        .btn-confirm { background: var(--dark); color: white; width: 100%; padding: 14px; border-radius: 12px; font-weight: 700; border: none; margin-top: 20px; font-size: 16px; }
-    </style>
+<style>
+body { font-family: Poppins, sans-serif; background: #f8f9fa; }
+.card { border-radius: 16px; }
+.btn-pink { background: #ec1066; color: #fff; font-weight: 600; }
+.btn-pink:hover { background: #d60f5d; }
+.icon-box { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
+.icon-box i { font-size: 22px; color: #ec1066; }
+footer a { color: #bbb; text-decoration: none; font-size: 14px; }
+footer a:hover { color: #fff; }
+</style>
 </head>
+
 <body>
 
-    <nav class="navbar bg-white border-bottom py-3">
-        <div class="container justify-content-between">
-            <a class="navbar-brand fw-bold fs-4" href="#"><span>zen</span><span style="color:var(--primary)">vybe</span></a>
-            <button class="btn btn-dark rounded-pill px-4 fw-bold" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Ticket</button>
-        </div>
-    </nav>
+<!-- HEADER -->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Prom Night</a>
+    <div class="text-white small">Home &nbsp; Events</div>
+  </div>
+</nav>
 
-    <header class="hero-section">
-        <div class="container">
-            <span class="hero-badge">JAN 24 • VISAKHAPATNAM</span>
-            <h1 class="display-4 fw-bold mb-4">Proom Night 2026</h1>
-            <img src="https://zenvybe.in/Events/uploads/events/events_1768744636.png" class="hero-poster" alt="Event Poster">
-            <p class="lead text-white-50 mb-4 px-3">Join us for the ultimate indoor experience at Stone Water.</p>
-            <button class="btn btn-light btn-lg rounded-pill px-5 fw-bold shadow" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Pass</button>
-        </div>
-    </header>
-
-    <div class="modal fade" id="bookingModal" data-bs-backdrop="static" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="fw-bold mb-0">Ticket Booking</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm()"></button>
-                </div>
-                <div class="modal-body">
-                    
-                    <div id="step-1">
-                        <label class="form-label-custom">Personal Information</label>
-                        <input id="in_name" class="form-control mb-3" placeholder="Your Full Name">
-                        <input id="in_email" class="form-control mb-3" placeholder="Email Address">
-                        <input id="in_phone" class="form-control mb-3" placeholder="Phone Number">
-                        
-                        <label class="form-label-custom">Select Ticket</label>
-                        <select id="in_ticket" class="form-select mb-4">
-                            <option value="2" data-name="Standard">Standard Entry – ₹2</option>
-                            <option value="3" data-name="Gold">Gold Pass – ₹3</option>
-                            <option value="2" data-name="VIP">VIP Access – ₹2</option>
-                        </select>
-                        
-                        <button class="btn-next" onclick="showPayment()">Continue to Payment <i class="bi bi-arrow-right ms-1"></i></button>
-                    </div>
-
-                    <div id="qr-section">
-                        <span class="form-label-custom text-dark">Scan to Pay: ₹<span id="display-price">0</span></span>
-                        <div class="my-2">
-                            <img id="upiQR" alt="Payment QR">
-                        </div>
-                        <p class="instruction-highlight"><i class="bi bi-camera-fill me-1"></i> SCREENSHOT TO PAY</p>
-                        <p class="small text-muted mb-4" style="line-height: 1.4;">Screenshot this QR and pay in GPay, PhonePe, or Paytm.</p>
-                        
-                        <label class="form-label-custom text-start w-100">Verification Details</label>
-                        <input id="user_upi" class="form-control mb-2" placeholder="Your UPI ID (e.g. name@oksbi)">
-                        <input id="in_utr" class="form-control mb-2" placeholder="12-digit UTR / Ref Number">
-                        
-                        <button class="btn-confirm" id="submitBtn" onclick="SubmitToWorker()">Confirm & Book Ticket</button>
-                        <button class="btn btn-link btn-sm text-muted mt-2 text-decoration-none" onclick="resetForm()"><i class="bi bi-arrow-left"></i> Go Back</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+<!-- EVENT -->
+<section class="container pt-5 mt-5">
+  <div class="row gy-4">
+    <div class="col-md-8" data-aos="zoom-out">
+      <img src="https://zenvybe.in/Events/uploads/events/events_1768744636.png" class="img-fluid rounded-4" alt="Biggest Desi Social Night">
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="col-md-4" data-aos="fade-up">
+      <div class="card p-4 shadow-sm">
+        <h3 class="fw-bold">One Night. Endless Memories.</h3>
 
-    <script>
-        const CONFIG = {
-            MY_UPI_ID: "6300476242@ibl",
-            WORKER_URL: "https://withered-heart-20dd.krish32627.workers.dev/"
-        };
+        <div class="icon-box"><i class="bi bi-music-note-beamed"></i><span>DJ Night</span></div>
+        <div class="icon-box"><i class="bi bi-calendar-event"></i><span>14 Feb 2026 | 06:00 PM</span></div>
+        <div class="icon-box"><i class="bi bi-geo-alt"></i><span>Sagar Nagar, Visakhapatnam, Yendada</span></div>
 
-        function showPayment() {
-            const name = document.getElementById('in_name').value.trim();
-            const phone = document.getElementById('in_phone').value.trim();
-            const amt = document.getElementById('in_ticket').value;
+        <a href="https://maps.app.goo.gl/7KTcYAmoF1QzTAmu5" target="_blank" class="btn btn-pink w-100 my-3">Get Directions</a>
 
-            if (!name || !phone || !document.getElementById('in_email').value) {
-                alert("Please fill in all personal details first.");
-                return;
-            }
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <small>Starts From</small><br>
+            <strong class="fs-4">₹299</strong>
+          </div>
+          <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookingModal">Book NOW</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            // Update UI
-            document.getElementById('display-price').innerText = amt;
+<!-- ABOUT -->
+<section class="container mt-5" data-aos="fade-up">
+<h4 class="fw-bold">About the Event</h4>
 
-            // Generate QR
-            const upiUrl = `upi://pay?pa=${CONFIG.MY_UPI_ID}&pn=Zenvybe&am=${amt}&cu=INR&tn=PromNight-${encodeURIComponent(name)}`;
-            const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(upiUrl)}`;
-            document.getElementById('upiQR').src = qrApi;
-            
-            // Switch Views
-            document.getElementById('step-1').style.display = 'none';
-            document.getElementById('qr-section').style.display = 'block';
-        }
+<p>
+Biggest Desi Social Night is an immersive indoor celebration built for those who enjoy desi rhythms, lively crowds, and unforgettable party nights.
+</p>
 
-        function resetForm() {
-            document.getElementById('step-1').style.display = 'block';
-            document.getElementById('qr-section').style.display = 'none';
-            // Clear inputs if modal is closed
-            document.getElementById('in_utr').value = "";
-            document.getElementById('user_upi').value = "";
-        }
+<p>
+The event blends a high-spirited audience, dynamic DJ performances, and engaging social elements — all thoughtfully designed to spark conversations, movement, and connection inside a polished club environment. Whether you arrive with friends or step in alone, the energy is open, upbeat, and inviting.
+</p>
 
-        async function SubmitToWorker() {
-            const btn = document.getElementById('submitBtn');
-            const utr = document.getElementById('in_utr').value.trim();
-            const userUpi = document.getElementById('user_upi').value.trim();
+<h6 class="fw-bold mt-3">Dynamic DJ Performances</h6>
+<p>A rotating mix of DJs delivering Bollywood chartbusters, Punjabi grooves, and desi dance tracks.</p>
 
-            if (!utr || utr.length < 10 || !userUpi) {
-                alert("Please enter both your UPI ID and the valid UTR Number.");
-                return;
-            }
+<h6 class="fw-bold">Social Icebreakers</h6>
+<p>Easygoing activities that help people interact naturally and comfortably.</p>
 
-            const data = {
-                name: document.getElementById('in_name').value.trim(),
-                phone: document.getElementById('in_phone').value.trim(),
-                email: document.getElementById('in_email').value.trim(),
-                user_upi: userUpi,
-                utr: utr,
-                ticket: document.getElementById('in_ticket').options[document.getElementById('in_ticket').selectedIndex].dataset.name,
-                price: document.getElementById('in_ticket').value
-            };
+<h6 class="fw-bold">Electrifying Desi Atmosphere</h6>
+<p>Pulsating beats, immersive lighting, and a constantly moving crowd.</p>
 
-            btn.disabled = true;
-            btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Verifying...`;
+<h6 class="fw-bold">Shared Dance Experiences</h6>
+<p>Collective dance moments that turn strangers into a single party crowd.</p>
 
-            try {
-                const res = await fetch(CONFIG.WORKER_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
-                if (res.ok) {
-                    alert("Ticket Submitted! We will verify your payment and contact you shortly.");
-                    location.reload();
-                } else { alert("Submission failed. Please try again."); }
-            } catch (e) { alert("Server connection error."); }
-            finally { btn.disabled = false; btn.innerText = "Confirm & Book Ticket"; }
-        }
-    </script>
+<h6 class="fw-bold">Refined outdoor Venue</h6>
+<p>A well-planned indoor space featuring powerful sound and striking visuals.</p>
+
+<p class="mt-3">
+Biggest Desi Social Night isn’t just about music — it’s a high-energy social gathering where connections form and the night leaves a lasting impression.
+</p>
+
+<p class="fw-semibold">Secure your entry now and step into the Biggest Desi Social Night.</p>
+</section>
+
+<!-- EVENT GUIDE -->
+<section class="container mt-5" data-aos="fade-up">
+<h4 class="fw-bold mb-3">Event Guide</h4>
+<div class="row text-center">
+  <div class="col-md-4"><i class="bi bi-alarm fs-3 text-danger"></i><p class="fw-bold">4 Hrs</p></div>
+  <div class="col-md-4"><i class="bi bi-person fs-3 text-danger"></i><p class="fw-bold">18 yrs & above</p></div>
+  <div class="col-md-4"><i class="bi bi-house fs-3 text-danger"></i><p class="fw-bold">outdoor</p></div>
+</div>
+</section>
+
+<!-- VENUE -->
+<section class="container mt-4" data-aos="fade-up">
+<h4 class="fw-bold">Venue</h4>
+<p>Sagar Nagar, Visakhapatnam, Yendada</p>
+<a href="https://maps.app.goo.gl/7KTcYAmoF1QzTAmu5" target="_blank" class="btn btn-outline-dark btn-sm">Get Directions</a>
+</section>
+
+<!-- TERMS -->
+<section class="container mt-5 mb-5" data-aos="fade-up">
+<h4 class="fw-bold">Terms & Conditions</h4>
+<ol>
+<li>Registration required; entry limited to registered participants.</li>
+<li>18 years and above only.</li>
+<li>Respectful conduct mandatory; harassment not tolerated.</li>
+<li>Organizers not responsible for personal belongings.</li>
+<li>Photography & videography consent applies.</li>
+<li>Event details may change if necessary.</li>
+<li>Follow health & safety guidelines.</li>
+<li>No refund policy.</li>
+<li>Organizers not liable for injuries or unforeseen incidents.</li>
+</ol>
+
+<p class="fw-semibold">By registering, you agree to these terms. Let’s create a safe and memorable experience!</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white mt-5">
+  <div class="container text-center py-4">
+    <p class="mb-1">Prom Night helps you find and book events shaped by music, mood, and meaningful social experiences.</p>
+    <div class="d-flex justify-content-center gap-3 mb-2">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact</a>
+      <a href="#">Refund & Cancellation Policy</a>
+    </div>
+    <small>© Copyright Prom Night · Designed by Prom Night</small>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal fade" id="bookingModal" data-bs-backdrop="static" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" style="max-width:420px;">
+    <div class="modal-content rounded-4">
+      <div class="modal-header">
+        <h5 class="fw-bold mb-0">Ticket Booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm()"></button>
+      </div>
+
+      <div class="modal-body">
+        <div id="step-1">
+          <input id="in_name" class="form-control mb-3" placeholder="Full Name">
+          <input id="in_email" class="form-control mb-3" placeholder="Email">
+          <input id="in_phone" class="form-control mb-3" placeholder="Phone Number">
+
+          <select id="in_ticket" class="form-select mb-4">
+            <option value="299" data-name="Standard">Standard Entry – ₹299</option>
+            <option value="499" data-name="Gold">Gold Pass – ₹499</option>
+            <option value="799" data-name="VIP">VIP Access – ₹799</option>
+          </select>
+
+          <button class="btn btn-pink w-100" onclick="showPayment()">Continue to Payment</button>
+        </div>
+
+        <div id="qr-section" style="display:none;" class="text-center">
+          <p class="fw-bold">Scan to Pay ₹<span id="display-price">0</span></p>
+          <div class="d-flex justify-content-center mb-3">
+            <img id="upiQR" class="rounded" alt="UPI QR">
+          </div>
+          <input id="user_upi" class="form-control mb-2" placeholder="Your UPI ID">
+          <input id="in_utr" class="form-control mb-3" placeholder="UTR / Ref Number">
+          <button class="btn btn-dark w-100" id="submitBtn" onclick="SubmitToWorker()">Confirm & Book Ticket</button>
+          <button class="btn btn-secondary w-100 mt-2" onclick="resetForm()">Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({once:true});</script>
+
+<script>
+const CONFIG = {
+    MY_UPI_ID: "6300476242@ibl",
+    WORKER_URL: "https://withered-heart-20dd.krish32627.workers.dev/"
+};
+
+function showPayment() {
+  const name = document.getElementById('in_name').value.trim();
+  const email = document.getElementById('in_email').value.trim();
+  const phone = document.getElementById('in_phone').value.trim();
+  const ticketValue = document.getElementById('in_ticket').value;
+
+  if (!name || !email || !phone) {
+    alert("Please fill all personal details before proceeding.");
+    return;
+  }
+
+  document.getElementById('display-price').innerText = ticketValue;
+  const upiUrl = `upi://pay?pa=${CONFIG.MY_UPI_ID}&pn=PromNight&am=${ticketValue}&cu=INR&tn=${encodeURIComponent(name)}`;
+  document.getElementById('upiQR').src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiUrl)}`;
+
+  document.getElementById('step-1').style.display = 'none';
+  document.getElementById('qr-section').style.display = 'block';
+}
+
+function resetForm() {
+  document.getElementById('step-1').style.display = 'block';
+  document.getElementById('qr-section').style.display = 'none';
+  document.getElementById('in_name').value = '';
+  document.getElementById('in_email').value = '';
+  document.getElementById('in_phone').value = '';
+  document.getElementById('in_utr').value = '';
+  document.getElementById('user_upi').value = '';
+}
+
+async function SubmitToWorker() {
+  const btn = document.getElementById('submitBtn');
+  const name = document.getElementById('in_name').value.trim();
+  const email = document.getElementById('in_email').value.trim();
+  const phone = document.getElementById('in_phone').value.trim();
+  const utr = document.getElementById('in_utr').value.trim();
+  const userUpi = document.getElementById('user_upi').value.trim();
+
+  if (!utr || utr.length < 10 || !userUpi) {
+    alert("Please enter both your UPI ID and a valid UTR Number.");
+    return;
+  }
+
+  const data = {
+    name: name,
+    email: email,
+    phone: phone,
+    user_upi: userUpi,
+    utr: utr,
+    ticket: document.getElementById('in_ticket').selectedOptions[0].dataset.name,
+    price: document.getElementById('in_ticket').value
+  };
+
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Verifying...`;
+
+  try {
+    const res = await fetch(CONFIG.WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      alert("Ticket Submitted! We will verify your payment and contact you shortly.");
+      resetForm();
+      const modal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+      modal.hide();
+    } else {
+      alert("Submission failed. Please try again.");
+    }
+  } catch (e) {
+    alert("Server connection error.");
+  } finally {
+    btn.disabled = false;
+    btn.innerText = "Confirm & Book Ticket";
+  }
+}
+</script>
+
 </body>
 </html>
